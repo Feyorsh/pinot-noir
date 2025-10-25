@@ -1,0 +1,18 @@
+* Pinot - Wine wrapper
+* Noir - Game launcher
+Fetch games list from https://api.steampowered.com/ISteamApps/GetAppList/v0002/ with cache TTL of a week or so
+Need to be able to search for a game given it's title (using a Vertico completing-read like interface)
+
+The information we need from a game is it's gameid and what platforms it's available on
+
+Written in Go using [[https://github.com/charmbracelet/bubbletea][Charm's Bubble Tea]]
+
+We need to make a Nix expression for Steam's beta client for aarch64-darwin
+Noir then needs to automatically startup just the key components of Steam (like the steamapi, the controller api, etc)
+Optionally, users can select "Open with steam" which will do "open steam://rungameid/..."
+
+Noir will have "add a game from Steam" or just "add a game", this lets you use Pinot for non-steam games
+
+
+* TODO Demo
+Simple Bubbletea app that reads user input and spits out a gameid
